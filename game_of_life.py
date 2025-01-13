@@ -1,5 +1,4 @@
 import numpy as np
-import time
 import os
 
 def clear_console():
@@ -39,7 +38,7 @@ def update_grid(grid):
 
 def main():
     rows, cols = 20, 40  # Size of the grid
-    grid = create_grid(rows, cols, randomise=True)
+    grid = create_grid(rows, cols)
 
     try:
         while True:
@@ -49,9 +48,16 @@ def main():
             for row in grid:
                 print("".join(["#" if cell else " " for cell in row]))
             print("-" * cols)
-            time.sleep(0.5)
 
-            grid = update_grid(grid)
+            print("Press 'n' for next step or 'q' to quit.")
+            user_input = input().lower()
+            if user_input == 'q':
+                print("Simulation stopped.")
+                break
+            elif user_input == 'n':
+                grid = update_grid(grid)
+            else:
+                print("Invalid input. Please press 'n' or 'q'.")
     except KeyboardInterrupt:
         print("\nSimulation stopped.")
 
