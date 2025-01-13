@@ -39,7 +39,7 @@ def update_grid(grid):
 
 def main():
     rows, cols = 20, 40  # Size of the grid
-    grid = create_grid(rows, cols)
+    grid = create_grid(rows, cols, randomise=True)
 
     try:
         while True:
