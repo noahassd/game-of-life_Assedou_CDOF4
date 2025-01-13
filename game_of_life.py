@@ -7,7 +7,7 @@ def clear_console():
 def create_grid(rows, cols):
     return np.random.choice([0, 1], size=(rows, cols))
 
-def count_neighbors(grid, row, col)
+def count_neighbors(grid, row, col):
     neighbors = [
         (-1, -1), (-1, 0), (-1, 1),
         (0, -1),          (0, 1),
