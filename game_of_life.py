@@ -6,11 +6,9 @@ def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def create_grid(rows, cols):
-    """Create a grid with random initial states (0 or 1)."""
     return np.random.choice([0, 1], size=(rows, cols))
 
-def count_neighbors(grid, row, col):
-    """Count the number of live neighbors for a cell."""
+def count_neighbors(grid, row, col)
     neighbors = [
         (-1, -1), (-1, 0), (-1, 1),
         (0, -1),          (0, 1),
@@ -24,7 +22,6 @@ def count_neighbors(grid, row, col):
     return count
 
 def update_grid(grid):
-    """Update the grid for the next generation."""
     new_grid = np.copy(grid)
     for row in range(grid.shape[0]):
         for col in range(grid.shape[1]):
