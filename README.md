@@ -27,6 +27,34 @@ This project serves as an introduction to creating and contributing to open-sour
    ```
 
 The simulation will start in the terminal, and you can exit by pressing `Ctrl + C`.
+## Contribution Guide
 
+### How to Contribute
+1. **Fork** the repository and clone it to your local machine.
+2. Create a new branch for your changes:
+   ```bash
+   git checkout -b your-feature-branch
+   ```
+3. Make your changes and commit them:
+   ```bash
+   git add .
+   git commit -m "Describe your changes"
+   ```
+4. Push your changes to your forked repository:
+   ```bash
+   git push origin your-feature-branch
+   ```
+5. Create a pull request from your branch to the main repository.
+
+### Contribution Ideas
+- Improve performance by optimizing neighbor calculations.
+- Add new features such as different starting patterns or adjustable grid sizes.
+- Enhance the documentation or create a user-friendly guide.
+
+### Reporting Issues
+Feel free to open an issue on the repository if you encounter bugs or have ideas for improvements. Please ensure your issue includes:
+- A clear title
+- A detailed description
+- Steps to reproduce the problem (if reporting a bug)
 ## License
 This project is licensed under the [MIT License](LICENSE).
