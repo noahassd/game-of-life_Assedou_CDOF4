@@ -18,7 +18,7 @@ This project serves as an introduction to creating and contributing to open-sour
 ### Steps to Run
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your_username/game_of_life-noah-CDOF4.git
+   git clone https://github.com/noahassd/game_of_life-noah-CDOF4.git
    cd game_of_life-noah-CDOF4
    ```
 2. Run the program:
