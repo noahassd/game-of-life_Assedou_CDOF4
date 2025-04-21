@@ -8,7 +8,7 @@ def clear_console():
     """
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def create_grid(rows, cols):
+def create_grid(rows, cols, predefined_grid=None):
     """
     Creates a grid with the specified number of rows and columns.
     Each cell is randomly assigned a value of 0 (dead) or 1 (alive).
@@ -20,7 +20,12 @@ def create_grid(rows, cols):
     Returns:
         np.ndarray: A 2D NumPy array representing the grid.
     """
-    return np.random.choice([0, 1], size=(rows, cols))
+    if predefined_grid is not None:
+        grid = np.array(predefined_grid)
+        assert grid.shape == (rows, cols), "Predefined grid shape mismatch!"
+        return grid
+    else:
+        return np.random.choice([0, 1], size=(rows, cols))
 
 def count_neighbors(grid, row, col):
     """
@@ -81,8 +86,23 @@ def main():
     Main function to run the Game of Life simulation.
     Initializes the grid and updates it based on user input.
     """
-    rows, cols = 20, 40                 # Define the size of the grid
-    grid = create_grid(rows, cols)      # Create the initial grid
+    rows, cols = 5, 5  # petit exemple pour clarté
+
+    # Exemple de grille prédéfinie (glider pattern)
+    predefined_grid = [
+        [0, 1, 0, 0, 0],
+        [0, 0, 1, 0, 0],
+        [1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+    ]
+
+    # Initialiser avec grille prédéfinie ou aléatoire selon choix utilisateur
+    choice = input("Use predefined grid? (y/n): ").lower()
+    if choice == 'y':
+        grid = create_grid(rows, cols, predefined_grid)
+    else:
+        grid = create_grid(rows, cols)    # Create the initial grid
 
     try:
         while True:                     # Infinite loop to keep the simulation running
